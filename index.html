@@ -1,58 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday 🎂</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: #f8b7c8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Comic Sans MS', cursive;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<title>Feliz Cumpleaños 💙</title>
 
-    .card {
-      background: #ffdfe8;
-      padding: 40px 60px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,.2);
-      animation: float 3s ease-in-out infinite;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
-    h1 {
-      color: #c2185b;
-      font-size: 3em;
-      text-shadow: 2px 2px 5px rgba(255,255,255,.7);
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    .cake {
-      font-size: 4em;
-      margin-bottom: 10px;
-      animation: candle 1s infinite alternate;
-    }
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #1e3c72, #0a192f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+/* Partículas */
+span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  animation: float 6s linear infinite;
+}
 
-    @keyframes candle {
-      from { transform: scale(1); }
-      to { transform: scale(1.05); }
-    }
-  </style>
+@keyframes float {
+  from {
+    transform: translateY(100vh) scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Tarjeta */
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 50px 60px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  backdrop-filter: blur(10px);
+  animation: appear 1.5s ease forwards;
+}
+
+@keyframes appear {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #7dd3fc;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.cake {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: pulse 1.2s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+button {
+  padding: 15px 35px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: #fff;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(56,189,248,.6);
+}
+
+.message {
+  margin-top: 25px;
+  font-size: 1.1rem;
+  display: none;
+  color: #e0f2fe;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="card">
-    <div class="cake">🎂</div>
-    <h1>Happy Birthday, hermano 🎉</h1>
+<!-- Partículas -->
+<script>
+for (let i = 0; i < 40; i++) {
+  const span = document.createElement("span");
+  span.style.left = Math.random() * 100 + "vw";
+  span.style.animationDelay = Math.random() * 6 + "s";
+  span.style.animationDuration = 4 + Math.random() * 4 + "s";
+  document.body.appendChild(span);
+}
+</script>
+
+<div class="card">
+  <div class="cake">🎂</div>
+  <h1>¡Feliz Cumpleaños!</h1>
+  <h2>Juan Carlos Tejeda 💙</h2>
+
+  <button onclick="showMessage()">Toca aquí ✨</button>
+
+  <div class="message" id="msg">
+    Que este nuevo año te regale salud, sueños cumplidos y mucha felicidad.  
+    Hoy se celebra tu vida 🎉💫
   </div>
+</div>
+
+<script>
+function showMessage() {
+  document.getElementById("msg").style.display = "block";
+}
+</script>
 
 </body>
 </html>
+
+
