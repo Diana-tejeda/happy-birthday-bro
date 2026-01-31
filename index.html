@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday 🎂</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f8b7c8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #ffdfe8;
+      padding: 40px 60px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,.2);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h1 {
+      color: #c2185b;
+      font-size: 3em;
+      text-shadow: 2px 2px 5px rgba(255,255,255,.7);
+    }
+
+    .cake {
+      font-size: 4em;
+      margin-bottom: 10px;
+      animation: candle 1s infinite alternate;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes candle {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="cake">🎂</div>
+    <h1>Happy Birthday, hermano 🎉</h1>
+  </div>
+
+</body>
+</html>
